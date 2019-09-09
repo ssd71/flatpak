@@ -194,6 +194,9 @@ flatpak_run_add_x11_args (FlatpakBwrap *bwrap,
       flatpak_bwrap_add_args (bwrap,
                               "--ro-bind", x11_socket, "/tmp/.X11-unix/X99",
                               NULL);
+      flatpak_bwrap_add_args (bwrap,
+                              "--ro-bind", x11_socket, "/tmp/.X11-unix/X8",
+                              NULL);
       flatpak_bwrap_set_env (bwrap, "DISPLAY", ":99.0", TRUE);
 
 #ifdef ENABLE_XAUTH
